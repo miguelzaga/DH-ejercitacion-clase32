@@ -4,7 +4,8 @@ module.exports = {
     "password": '1234',
     "database": "movies_db",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "port": "3307"
   },
   "test": {
     "username": "root",

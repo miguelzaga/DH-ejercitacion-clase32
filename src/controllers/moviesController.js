@@ -10,6 +10,7 @@ const moviesController = {
             .then(movies => {
                 res.render('moviesList.ejs', {movies})
             })
+            .catch(err => res.send(err))
     },
     'detail': (req, res) => {
         db.Movie.findByPk(req.params.id)
@@ -42,10 +43,17 @@ const moviesController = {
             });
     }, //Aqui debemos modificar y completar lo necesario para trabajar con el CRUD
     add: function (req, res) {
-        // TODO   
+        res.render('moviesAdd')
     },
     create: function (req, res) {
         // TODO
+        db.Movie.create({
+            title: req.body.title,
+            rating: req.body.rating,
+            awards: req.body.awards,
+            release_date: req.body.release_date,
+            length: req.body.length
+        })
     },
     edit: function(req, res) {
         // TODO
